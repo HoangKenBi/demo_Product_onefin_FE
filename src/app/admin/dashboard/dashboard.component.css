@@ -1,0 +1,141 @@
+#div1 {    
+    border: 1px solid;
+    padding: 10px;
+    background-color: antiquewhite;
+    height: 600px;
+}
+.header {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+#btn-back {
+    margin-top: 8px;
+    margin-left: 40px;
+    margin-right: 550px; /* Khoảng cách giữa nút và tiêu đề */
+}
+h1 {
+    margin: 0; /* Loại bỏ khoảng cách mặc định của h1 */
+}
+.product {
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    color: blue; /* Màu chữ mặc định */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+    font-weight: bold;
+}
+.product:hover {
+    color: darkorchid; /* Màu chữ khi di chuột qua */
+}
+.account{
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    color: blue; /* Màu chữ mặc định */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+    font-weight: bold;
+}
+.account:hover {
+    color: darkorchid; /* Màu chữ khi di chuột qua */
+}
+.merchant{
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    color: blue; /* Màu chữ mặc định */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+    font-weight: bold;
+}
+.merchant:hover {
+    color: darkorchid; /* Màu chữ khi di chuột qua */
+}
+.dasboard{
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    color: blue; /* Màu chữ mặc định */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+    font-weight: bold;
+}
+.dasboard:hover {
+    color: darkorchid; /* Màu chữ khi di chuột qua */
+}
+table.min-w-full {
+    width: 100%;
+    border-collapse: collapse; /* Loại bỏ khoảng cách giữa các ô */
+}
+thead th {
+    text-align: center;
+    padding: 8px;
+    background-color: #f1f1f1; /* Màu nền cho hàng tiêu đề */
+}
+tbody td {
+    text-align: center;
+    padding: 8px;
+}
+th, td {
+    width: 1%;
+    white-space: nowrap; /* Đảm bảo nội dung không bị gấp dòng */
+}
+th, td {
+    border: 1px solid #ddd; /* Đường viền mỏng quanh các ô */
+}
+.cla{
+    max-width: 80px; /* Đặt chiều rộng tối đa cho cột */
+    overflow: hidden; /* Ẩn phần văn bản vượt quá chiều rộng */
+    white-space: nowrap; /* Ngăn ngắt dòng trong phần tử */
+    text-overflow: ellipsis; /* Thêm dấu ba chấm khi văn bản bị cắt bớt */
+    position: relative; /* Cần thiết để hiển thị phần tử ảo */
+    cursor: pointer; /* Thay đổi con trỏ khi hover */
+}
+.cla:hover::after {
+    content: attr(title); /* Hiển thị nội dung từ thuộc tính title */
+    position: absolute;
+    border: 1px solid #ccc; /* Viền của hộp */
+    padding: 5px; /* Khoảng cách giữa văn bản và viền */
+    white-space: nowrap; /* Ngăn ngắt dòng trong phần tử ảo */
+    left: 0;
+    top: 100%;
+    z-index: 10; /* Đảm bảo phần tử ảo hiển thị trên các phần tử khác */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng đổ */
+}
+.clb{
+    max-width: 200px; /* Đặt chiều rộng tối đa cho cột */
+    overflow: hidden; /* Ẩn phần văn bản vượt quá chiều rộng */
+    white-space: nowrap; /* Ngăn ngắt dòng trong phần tử */
+    text-overflow: ellipsis; /* Thêm dấu ba chấm khi văn bản bị cắt bớt */
+    position: relative; /* Để hiển thị phần bị cắt khi hover */
+    cursor: pointer; /* Thay đổi con trỏ khi hover */
+}
+.clb:hover::after {
+    content: attr(title); /* Sử dụng thuộc tính title để hiển thị toàn bộ văn bản */
+    position: absolute;
+    border: 1px solid #ccc; /* Viền của popup */
+    padding: 5px; /* Khoảng cách giữa văn bản và viền */
+    white-space: normal; /* Cho phép ngắt dòng trong phần hover */
+    z-index: 1; /* Đảm bảo popup hiển thị trên các phần tử khác */
+    left: 0;
+    top: 100%;
+    width: max-content; /* Điều chỉnh chiều rộng tự động theo nội dung */
+    max-width: 300px; /* Giới hạn chiều rộng tối đa của popup */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ */
+}
+.cl7{
+    max-width: 100px; /* Đặt chiều rộng tối đa cho cột */
+    overflow: hidden; /* Ẩn phần văn bản vượt quá chiều rộng */
+    white-space: nowrap; /* Ngăn ngắt dòng trong phần tử */
+    text-overflow: ellipsis; /* Thêm dấu ba chấm khi văn bản bị cắt bớt */
+    position: relative; /* Cần thiết để hiển thị phần tử ảo */
+    cursor: pointer; /* Thay đổi con trỏ khi hover */
+}
+.cl7:hover::after {
+    content: attr(title); /* Hiển thị nội dung từ thuộc tính title */
+    position: absolute;
+    border: 1px solid #ccc; /* Viền của hộp */
+    padding: 5px; /* Khoảng cách giữa văn bản và viền */
+    white-space: nowrap; /* Ngăn ngắt dòng trong phần tử ảo */
+    left: 0;
+    top: 100%;
+    z-index: 10; /* Đảm bảo phần tử ảo hiển thị trên các phần tử khác */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng đổ */
+}
+.div-pageOrderDetail{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+  

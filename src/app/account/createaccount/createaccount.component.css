@@ -1,0 +1,31 @@
+.container{
+    height: 100%;
+    margin-top: 20px;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center;    /* Căn giữa theo chiều dọc */
+    width: 900px; /* Đặt kích thước của container theo nhu cầu */
+    height: 500px;
+    background-color: lightblue; /* Đặt màu nền cho dễ nhìn */
+}
+/* Định dạng cơ bản của select */
+.custom-select {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .custom-select select {
+    background: #fff;
+    border-radius: 4px;
+    width: 300px;
+  }
+  .custom-select::after {
+    content: '\25BC'; /* Mã Unicode cho mũi tên đi xuống */
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none; /* Để mũi tên không cản trở việc chọn */
+    font-size: 12px;
+    color: black;
+  }
+

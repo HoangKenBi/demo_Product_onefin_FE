@@ -1,0 +1,67 @@
+<div class="header">
+    <a id="btn-back" routerLink="" class="btn btn-sm btn-primary">Home Back</a> 
+    <h1>OrderDetails</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div id="div1"  class="col-2">
+            <div class="text1" >
+                <h5 style="font-size: 30px; text-align: center; color: black; margin-bottom: 30px;">Menu</h5>
+                <div style=" height: 50px; "><a class="dasboard">OrderDetail</a></div>
+                <div style=" height: 50px; "><a class="product" routerLink="/listproduct">Product</a></div>
+                <div style=" height: 50px; "><a class="account" routerLink="/listaccount">Account</a></div>
+            </div>
+        </div>
+        <div id="div2" class="col-10">
+            <div class="text2">
+                <h2 class="text-xl font-bold">OrderDetail History</h2>
+                <table class="min-w-full mt-4">
+                  <thead>
+                    <tr class="border-b">
+                      <th scope="col">ID</th>
+                      <th scope="col">Product</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Image</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">TotalPrice</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Option</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b" *ngFor="let odv of OrderDetail">
+                      <td class="cl1">{{ odv.idOrderDetail }}</td>
+                      <td class="cl2">{{ odv.nameProduct }}</td>
+                      <td class="cl3">{{ odv.priceProduct }}</td>
+                      <td class="cla" title="{{ odv.imgProduct }}">{{ odv.imgProduct }}</td>
+                      <td class="cl5">{{ odv.nameOrder }}</td>
+                      <td class="cl6">{{ odv.phoneOrder }}</td>
+                      <td class="cl7" title="{{ odv.emailOrder }}">{{ odv.emailOrder }}</td>
+                      <td class="clb" title="{{ odv.addressOrder }}">{{ odv.addressOrder }}</td>
+                      <td class="cl8">{{ odv.totalQuantity }}</td>
+                      <td class="cl9">{{ odv.totalPrice }}</td>
+                      <td class="cl10">{{ getStatus(odv.statusOrderDetail) }}</td>  
+                      <td>
+                        <a routerLink="/editorderdetaiil/{{odv.idOrderDetail}}" class="btn btn-sm btn-primary" style="margin-right: 5px;">Edit</a>
+                        <a routerLink="/dashboard" (click)="OnDeleteOrderDetail(odv.idOrderDetail)" class="btn btn-sm btn-danger"  >Delete</a>
+                    </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="div-pageOrderDetail" *ngIf="totalPageOrderDetail > 1">
+                  <button  (click)="goToPageOrderDetail(currentPageOrderDetail - 1)" [disabled]="currentPageOrderDetail === 1">Previous</button>
+                  <span style="margin: 10px; margin-right: 10px; font-weight: bolder;"> {{ currentPageOrderDetail }} </span>
+                  <button (click)="goToPageOrderDetail(currentPageOrderDetail + 1)" [disabled]="currentPageOrderDetail=== totalPageOrderDetail">Next</button>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+ 

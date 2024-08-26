@@ -1,0 +1,31 @@
+<nav id="nav" class="navbar navbar-inverse">
+    <div class="div-nav">
+        <input type="text" [(ngModel)]="searchProduct" placeholder="Search..." name="search">
+        <button style="background-color: dodgerblue;" (click)="onSearchProduct()">Search</button>
+        <a style="margin-left: 500px;" class="btn btn-sm btn-primary" >About</a> 
+        <a class="btn btn-sm btn-primary" >Blog</a> 
+        <a class="btn btn-sm btn-primary" >Contact</a> 
+        <a  routerLink=""  class="btn btn-sm btn-primary" >Sign out</a> 
+    </div>
+</nav>
+<div class="div-body">
+    <img style="width: 90%;height: 230px;" src="https://i0.wp.com/namthuymobile.com/wp-content/uploads/2021/04/namthuymobile-banner-01.jpg?fit=2600%2C772&ssl=1" alt="" > 
+</div>
+
+<div class="products-container">
+    <div *ngFor="let pro of products" class="product-card">
+      <img [src]="pro.imgProduct" alt="{{ pro.nameProduct }}" />
+      <h3>{{ pro.nameProduct }}</h3>
+      <p>Price: {{ pro.priceProduct | currency }}</p>
+      <p>Quantity: {{ pro.quantityProduct }}</p>
+      <a [routerLink]="['/order', pro.idProduct]" class="btn btn-sm btn-primary" style="margin-top: 10px; margin-left: 0px;">Buy</a>
+      <!-- <a routerLink="/order" class="btn btn-sm btn-primary" style="margin-top: 10px; margin-left: 0px;" >Buy</a> -->
+    </div>
+</div>
+<div class="div-pageStudent" *ngIf="totalPageProduct > 1">
+    <button  (click)="goToPageProduct(currentPageProduct - 1)" [disabled]="currentPageProduct === 1">Previous</button>
+    <span style="margin: 10px; margin-right: 10px; font-weight: bolder;"> {{ currentPageProduct }} </span>
+    <button (click)="goToPageProduct(currentPageProduct + 1)" [disabled]="currentPageProduct === totalPageProduct">Next</button>
+</div>
+
+

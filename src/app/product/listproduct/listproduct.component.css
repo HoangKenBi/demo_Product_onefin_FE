@@ -1,0 +1,89 @@
+#div1 {   
+    border: 1px solid;
+    padding: 10px;
+    background-color: antiquewhite;
+    height: 600px;
+}
+#div2{
+    border: 1px solid;   
+}
+.header {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+#btn-back {
+    margin-top: 8px;
+    margin-left: 40px;
+    margin-right: 550px; /* Khoảng cách giữa nút và tiêu đề */
+}
+h1 {
+    margin: 0; /* Loại bỏ khoảng cách mặc định của h1 */
+}
+.product {
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    color: blue; /* Màu chữ mặc định */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+    font-weight: bold;
+}
+.product:hover {
+    color: darkorchid; /* Màu chữ khi di chuột qua */
+}
+.account{
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    color: blue; /* Màu chữ mặc định */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+    font-weight: bold;
+}
+.account:hover {
+    color: darkorchid; /* Màu chữ khi di chuột qua */
+}
+.merchant{
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    color: blue; /* Màu chữ mặc định */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+    font-weight: bold;
+}
+.merchant:hover {
+    color: darkorchid; /* Màu chữ khi di chuột qua */
+}
+.dasboard{
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    color: blue; /* Màu chữ mặc định */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+    font-weight: bold;
+}
+.dasboard:hover {
+    color: darkorchid; /* Màu chữ khi di chuột qua */
+}
+.div-nav{
+    margin-left: 150px;
+}
+.table{
+    margin-left: 30px;
+    width: 97%; /* Tùy chỉnh chiều rộng theo ý muốn */
+    margin-top: 15px;
+}
+#btn-add{
+    margin-right: 20px;
+}
+#btn-hh{
+    margin-left: 20px;
+}
+.div-searchStudent{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.div-pageStudent{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.img-column {
+    max-width: 120px; /* Đặt chiều rộng tối đa cho cột */
+    overflow: hidden; /* Ẩn phần văn bản vượt quá chiều rộng */
+    white-space: nowrap; /* Ngăn ngắt dòng trong phần tử */
+    text-overflow: ellipsis; /* Thêm dấu ba chấm khi văn bản bị cắt bớt */
+}

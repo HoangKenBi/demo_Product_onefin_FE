@@ -1,0 +1,105 @@
+<div class="container">
+    <h2 style="text-align: center; padding-top: 40px;">Edit OrderDetail</h2>
+<form id="form" class="form-horizontal" action="/action_page.php" [formGroup]="editOrderDetail" (ngSubmit)="onUpdateOrderDetail()">
+
+    <div class="row">
+        <div style="margin-left: 30px;" class="col-md-5">
+            <label class="control-label col-sm-4" >ID:</label>
+            <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+              <input type="text" class="form-control" formControlName="idOrderDetail" placeholder="Example: ..." name="idOrderDetail">
+            <div *ngIf="editOrderDetail['controls']['idOrderDetail'].dirty && editOrderDetail['controls']['idOrderDetail'].errors">
+                <small style="color: red;" *ngIf="editOrderDetail['controls']['idOrderDetail'].errors['required']">Id cannot be blank</small>
+                <small style="color: red;" *ngIf="editOrderDetail['controls']['idOrderDetail'].errors['pattern']">Id cannot be entered in letters</small>
+            </div>
+            </div>
+            <label class="control-label col-sm-4" >Product :</label>
+            <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+              <input type="text" class="form-control" formControlName="nameProduct" placeholder="Example: Iphone X" name="nameProduct">
+            <div *ngIf="editOrderDetail['controls']['nameProduct'].dirty && editOrderDetail['controls']['nameProduct'].errors">
+                <small style="color: red;" *ngIf="editOrderDetail['controls']['nameProduct'].errors['required']">The Product's name is not left empty</small>
+                <small style="color: red;" *ngIf="editOrderDetail['controls']['nameProduct'].errors['pattern']">The Prodcut name must be imported correctly and not allowed to enter the number</small>
+            </div>
+            </div>
+            <label class="control-label col-sm-3" >Price:</label>
+            <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+              <input type="text" class="form-control" formControlName="priceProduct" placeholder="Example: 100" name="priceProduct">
+            <div *ngIf="editOrderDetail['controls']['priceProduct'].dirty && editOrderDetail['controls']['priceProduct'].errors">
+                <small style="color: red;" *ngIf="editOrderDetail['controls']['priceProduct'].errors['required']">price can not be left blank</small>
+                <small style="color: red;" *ngIf="editOrderDetail['controls']['priceProduct'].errors['pattern']">The price is not allowed to enter, must have 10 characters Example: 0123456789</small>
+            </div>
+            </div>
+            <label class="control-label col-sm-3" >Image:</label>
+            <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+              <input type="text" class="form-control" formControlName="imgProduct" placeholder="Example: image.jpg" name="imgProduct">
+            <div *ngIf="editOrderDetail['controls']['imgProduct'].dirty && editOrderDetail['controls']['imgProduct'].errors">
+                <small style="color: red;" *ngIf="editOrderDetail['controls']['imgProduct'].errors['required']">Image can not be left blank</small>
+            </div>
+            </div>
+            <label class="control-label col-sm-4" >Name:</label>
+            <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+              <input type="text" class="form-control" formControlName="nameOrder" placeholder="Example: Iphone X" name="nameOrder">
+            <div *ngIf="editOrderDetail['controls']['nameOrder'].dirty && editOrderDetail['controls']['nameOrder'].errors">
+                <small style="color: red;" *ngIf="editOrderDetail['controls']['nameOrder'].errors['required']">Customer name cannot be blank</small>
+                <small style="color: red;" *ngIf="editOrderDetail['controls']['nameOrder'].errors['pattern']">Customer name cannot be entered in numbers</small>
+            </div>
+            </div>
+        </div>
+            <div style=" margin-left: 30px;" class="col-md-5">
+                <label class="control-label col-sm-3" >Phone:</label>
+                <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+                  <input type="text" class="form-control" formControlName="phoneOrder" placeholder="Example: 50" name="phoneOrder">
+                <div *ngIf="editOrderDetail['controls']['phoneOrder'].dirty && editOrderDetail['controls']['phoneOrder'].errors">
+                    <small style="color: red;" *ngIf="editOrderDetail['controls']['phoneOrder'].errors['required']">Phone can not be left blank</small>
+                    <small style="color: red;" *ngIf="editOrderDetail['controls']['phoneOrder'].errors['pattern']">The Phone is not allowed to enter</small>
+                </div>
+                </div>
+                <label class="control-label col-sm-3" >Email:</label>
+                <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+                  <input type="text" class="form-control" formControlName="emailOrder" placeholder="Example: image.jpg" name="emailOrder">
+                <div *ngIf="editOrderDetail['controls']['emailOrder'].dirty && editOrderDetail['controls']['emailOrder'].errors">
+                    <small style="color: red;" *ngIf="editOrderDetail['controls']['emailOrder'].errors['required']">Incorrect email format</small>
+                </div>
+                </div>
+                <label class="control-label col-sm-3" >Address:</label>
+                <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+                  <input type="text" class="form-control" formControlName="addressOrder" placeholder="Example: 50" name="addressOrder">
+                <div *ngIf="editOrderDetail['controls']['addressOrder'].dirty && editOrderDetail['controls']['addressOrder'].errors">
+                    <small style="color: red;" *ngIf="editOrderDetail['controls']['addressOrder'].errors['required']">Address can not be left blank</small>
+                    <small style="color: red;" *ngIf="editOrderDetail['controls']['addressOrder'].errors['pattern']">The Address is not allowed to enter</small>
+                </div>
+                </div>
+                <label class="control-label col-sm-3" >TotalQuantity:</label>
+                <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+                  <input type="text" class="form-control" formControlName="totalQuantity" placeholder="Example: 50" name="totalQuantity">
+                <div *ngIf="editOrderDetail['controls']['totalQuantity'].dirty && editOrderDetail['controls']['totalQuantity'].errors">
+                    <small style="color: red;" *ngIf="editOrderDetail['controls']['totalQuantity'].errors['required']">TotalQuantity can not be left blank</small>
+                    <small style="color: red;" *ngIf="editOrderDetail['controls']['totalQuantity'].errors['pattern']">The TotalQuantity is not allowed to enter</small>
+                </div>
+                </div>
+                <label class="control-label col-sm-3" >TotalPrice:</label>
+                <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+                  <input type="text" class="form-control" formControlName="totalPrice" placeholder="Example: 50" name="totalPrice">
+                <div *ngIf="editOrderDetail['controls']['totalPrice'].dirty && editOrderDetail['controls']['totalPrice'].errors">
+                    <small style="color: red;" *ngIf="editOrderDetail['controls']['totalPrice'].errors['required']">TotalPrice can not be left blank</small>
+                    <small style="color: red;" *ngIf="editOrderDetail['controls']['totalPrice'].errors['pattern']">The TotalPrice is not allowed to enter</small>
+                </div>
+                </div>
+                <label class="control-label col-sm-3" >Status:</label>
+                <div class="col-sm-10" style="margin-top: 10px; width: 300px;">  
+                  <div class="custom-select">
+                    <select class="form-control" formControlName="statusOrderDetail">
+                        <option  value="" disabled selected>Select Role</option>
+                        <option *ngFor="let ro of status">{{ ro }}</option>
+                    </select> 
+                  </div>        
+                </div>
+
+            </div>
+        </div>
+  <div class="form-group" style="margin-top: 40px; margin-left: 300px;">        
+    <div class="col-sm-offset-2 col-sm-9">
+      <button type="submit" class="btn btn-primary" [disabled]="editOrderDetail.invalid">Save</button>
+    </div>
+  </div>
+</form>
+</div>

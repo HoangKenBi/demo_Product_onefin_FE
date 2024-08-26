@@ -1,0 +1,57 @@
+<div class="container">
+    <h2 style="text-align: center; padding-top: 40px;">Add New</h2>
+<form id="form" class="form-horizontal" action="/action_page.php" [formGroup]="addProduct" (ngSubmit)="onCreateProductt()">
+<div class="row">
+    <div style="margin-top: 30px; margin-left: 80px;" class="col-md-5">
+        <label class="control-label col-sm-4" >Name Product:</label>
+        <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+          <input type="text" class="form-control" formControlName="nameProduct" placeholder="Example: Iphone X" name="nameProduct">
+        <div *ngIf="addProduct['controls']['nameProduct'].dirty && addProduct['controls']['nameProduct'].errors">
+            <small style="color: red;" *ngIf="addProduct['controls']['nameProduct'].errors['required']">The Product's name is not left empty</small>
+            <small style="color: red;" *ngIf="addProduct['controls']['nameProduct'].errors['pattern']">The Prodcut name must be imported correctly and not allowed to enter the number</small>
+        </div>
+        </div>
+        <label class="control-label col-sm-3" >Price:</label>
+        <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+          <input type="text" class="form-control" formControlName="priceProduct" placeholder="Example: 100" name="priceProduct">
+        <div *ngIf="addProduct['controls']['priceProduct'].dirty && addProduct['controls']['priceProduct'].errors">
+            <small style="color: red;" *ngIf="addProduct['controls']['priceProduct'].errors['required']">price can not be left blank</small>
+            <small style="color: red;" *ngIf="addProduct['controls']['priceProduct'].errors['pattern']">The price is not allowed to enter, must have 10 characters Example: 0123456789</small>
+        </div>
+        </div>
+        <label class="control-label col-sm-3" >Quantity:</label>
+        <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+          <input type="text" class="form-control" formControlName="quantityProduct" placeholder="Example: 50" name="quantityProduct">
+        <div *ngIf="addProduct['controls']['quantityProduct'].dirty && addProduct['controls']['quantityProduct'].errors">
+            <small style="color: red;" *ngIf="addProduct['controls']['quantityProduct'].errors['required']">Quantity can not be left blank</small>
+            <small style="color: red;" *ngIf="addProduct['controls']['quantityProduct'].errors['pattern']">The Quantity is not allowed to enter, must have 10 characters Example: 0123456789</small>
+        </div>
+        </div>
+    </div>
+        <div style="margin-top: 30px; margin-left: 30px;" class="col-md-5">
+            <label class="control-label col-sm-3" >Image:</label>
+            <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+              <input type="text" class="form-control" formControlName="imgProduct" placeholder="Example: image.jpg" name="imgProduct">
+            <div *ngIf="addProduct['controls']['imgProduct'].dirty && addProduct['controls']['imgProduct'].errors">
+                <small style="color: red;" *ngIf="addProduct['controls']['imgProduct'].errors['required']">Image can not be left blank</small>
+            </div>
+            </div>
+            <label class="control-label col-sm-3" >Status:</label>
+            <div class="col-sm-10" style="margin-top: 10px; width: 300px;">  
+              <div class="custom-select">
+                <select class="form-control" formControlName="statusProduct">
+                    <option  value="" disabled selected>Select Status</option>
+                    <option *ngFor="let role of roles">{{ role }}</option>
+                </select> 
+              </div>        
+            </div>
+        </div>
+    </div>
+    <div class="form-group" style="margin-top: 50px; margin-left: 385px;">        
+        <div class="col-sm-offset-2 col-sm-9">
+            <button type="submit" class="btn btn-primary" [disabled]="addProduct.invalid">Add New</button>
+        </div>
+    </div>
+</form>
+</div>
+

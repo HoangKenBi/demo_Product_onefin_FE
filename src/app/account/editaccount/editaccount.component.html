@@ -1,0 +1,67 @@
+<div class="container">
+    <h2 style="text-align: center; padding-top: 40px;">Edit Account</h2>
+<form id="form" class="form-horizontal" action="/action_page.php" [formGroup]="editAccount" (ngSubmit)="onUpdateAccount()">
+
+    <div class="row">
+        <div style="margin-top: 30px; margin-left: 30px;" class="col-md-5">
+            <label class="control-label col-sm-4" >ID Account:</label>
+            <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+              <input type="text" class="form-control" formControlName="idAccount" placeholder="Example: ..." name="idAccount">
+            <div *ngIf="editAccount['controls']['idAccount'].dirty && editAccount['controls']['idAccount'].errors">
+                <small style="color: red;" *ngIf="editAccount['controls']['idAccount'].errors['required']">The ID is not left empty</small>
+                <small style="color: red;" *ngIf="editAccount['controls']['idAccount'].errors['pattern']">The ID is not allowed to enter</small>
+            </div>
+            </div>
+            <label class="control-label col-sm-4" >Name :</label>
+            <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+              <input type="text" class="form-control" formControlName="fullNameAccount" placeholder="Example: nam" name="fullNameAccount">
+            <div *ngIf="editAccount['controls']['fullNameAccount'].dirty && editAccount['controls']['fullNameAccount'].errors">
+                <small style="color: red;" *ngIf="editAccount['controls']['fullNameAccount'].errors['required']">The Account name is not left empty</small>
+                <small style="color: red;" *ngIf="editAccount['controls']['fullNameAccount'].errors['pattern']">The Account name must be imported correctly and not allowed to enter the number</small>
+            </div>
+            </div>
+            <label class="control-label col-sm-3" >Email:</label>
+            <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+              <input type="text" class="form-control" formControlName="emailAccount" placeholder="Example: abc@gmail.com" name="emailAccount">
+            <div *ngIf="editAccount['controls']['emailAccount'].dirty && editAccount['controls']['emailAccount'].errors">
+                <small style="color: red;" *ngIf="editAccount['controls']['emailAccount'].errors['required']">Email must not leave blank</small>
+                <small style="color: red;" *ngIf="editAccount['controls']['emailAccount'].errors['pattern']">Email improper format</small>
+            </div>
+            </div>
+        </div>
+            <div style="margin-top: 30px; margin-left: 30px;" class="col-md-5">
+                <label class="control-label col-sm-3" >User:</label>
+                <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+                  <input type="text" class="form-control" formControlName="userNameAccount" placeholder="Example: 50" name="userNameAccount">
+                <div *ngIf="editAccount['controls']['userNameAccount'].dirty && editAccount['controls']['userNameAccount'].errors">
+                    <small style="color: red;" *ngIf="editAccount['controls']['userNameAccount'].errors['required']">User can not be left blank</small>
+                    <small style="color: red;" *ngIf="editAccount['controls']['userNameAccount'].errors['pattern']">The User is not allowed to enter</small>
+                </div>
+                </div>
+                <label class="control-label col-sm-3" >Password:</label>
+                <div class="col-sm-10" style="margin-top: 10px; width: 300px;">          
+                  <input type="text" class="form-control" formControlName="passwordAccount" placeholder="Example: nam" name="passwordAccount">
+                <div *ngIf="editAccount['controls']['passwordAccount'].dirty && editAccount['controls']['passwordAccount'].errors">
+                    <small style="color: red;" *ngIf="editAccount['controls']['passwordAccount'].errors['required']">Password can not be left blank</small>
+                    <small style="color: red;" *ngIf="editAccount['controls']['passwordAccount'].errors['pattern']">The Password is not allowed to enter</small>
+                </div>
+                </div>
+                <label class="control-label col-sm-3" >Role:</label>
+                <div class="col-sm-10" style="margin-top: 10px; width: 300px;">  
+                  <div class="custom-select">
+                    <select class="form-control" formControlName="role">
+                        <option  value="" disabled selected>Select Role</option>
+                        <option *ngFor="let ro of roless">{{ ro }}</option>
+                    </select> 
+                  </div>        
+                </div>
+
+            </div>
+        </div>
+  <div class="form-group" style="margin-top: 40px; margin-left: 300px;">        
+    <div class="col-sm-offset-2 col-sm-9">
+      <button type="submit" class="btn btn-primary" [disabled]="editAccount.invalid">Save</button>
+    </div>
+  </div>
+</form>
+</div>

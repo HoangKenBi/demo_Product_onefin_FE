@@ -1,0 +1,97 @@
+<div class="container">
+  <!-- <div class="row">
+  <div id="text" class="control-label col-sm-7"> -->
+    <h2 style="text-align: center; padding-top: 40px;">Delivery Information</h2>
+<form id="form" class="form-horizontal" action="/action_page.php" [formGroup]="addFormOrder" (ngSubmit)="onCreateOrder()">
+  <div class="row">
+  <div id="text" class="control-label col-sm-7">
+  <div class="form-group" >
+    <label class="control-label col-sm-3" >Name:</label>
+    <div class="col-sm-10" style="margin-top: 10px; width: 600px;">          
+      <input type="text" class="form-control" formControlName="nameOrder" placeholder="Example: Nam" name="nameOrder">
+      <div *ngIf="addFormOrder['controls']['nameOrder'].dirty && addFormOrder['controls']['nameOrder'].errors">
+        <small style="color: red;" *ngIf="addFormOrder['controls']['nameOrder'].errors['required']">The name of the Ward must not leave empty </small>
+        <small style="color: red;" *ngIf="addFormOrder['controls']['nameOrder'].errors['pattern']">The name of the Ward must be imported correctly and not allowed to enter the number</small>
+      </div>
+    </div>
+    <label class="control-label col-sm-3" >Phone:</label>
+    <div class="col-sm-10" style="margin-top: 10px; width: 600px;">          
+      <input type="text" class="form-control" formControlName="phoneOrder" placeholder="Example: 0123456789" name="phoneOrder">
+      <div *ngIf="addFormOrder['controls']['phoneOrder'].dirty && addFormOrder['controls']['phoneOrder'].errors">
+        <small style="color: red;" *ngIf="addFormOrder['controls']['phoneOrder'].errors['required']">Phone number can not be left blank</small>
+        <small style="color: red;" *ngIf="addFormOrder['controls']['phoneOrder'].errors['pattern']">The phone number is not allowed to enter, must have 10 characters Example: 0123456789</small>
+      </div>
+    </div>
+    <label class="control-label col-sm-3" >Email:</label>
+    <div class="col-sm-10" style="margin-top: 10px; width: 600px;">          
+      <input type="text" class="form-control" formControlName="emailOrder" placeholder="Example: aaa@gmail.com" name="emailOrder">
+      <div *ngIf="addFormOrder['controls']['emailOrder'].dirty && addFormOrder['controls']['emailOrder'].errors">
+        <small style="color: red;" *ngIf="addFormOrder['controls']['emailOrder'].errors['required']">Email must not leave blank</small>
+        <small style="color: red;" *ngIf="addFormOrder['controls']['emailOrder'].errors['email']">Email improper format</small>
+      </div>
+    </div>
+
+    <div class="form-groupppp">
+      <label class="control-label col-sm-3"></label>
+      <div class="col-sm-10" style="margin-top: 10px;">
+        <div class="form-controlsss">
+          <div class="form-control-wrapperrr">
+            <select class="form-controlll" formControlName="provinceOrder" (change)="onProvinceChange($event)">
+              <option value="" disabled>Province</option>
+              <option *ngFor="let province of provinces" [value]="province">{{province}}</option>
+            </select>
+          </div>
+          <div class="form-control-wrapperrr">
+            <select class="form-controlll" formControlName="districtOrder" (change)="onDistrictChange($event)">
+              <option value="" disabled>District</option>
+              <option *ngFor="let district of districts" [value]="district">{{district}}</option>
+            </select>
+          </div>
+          <div class="form-control-wrapperrr">
+            <select class="form-controlll" formControlName="wardOrder" (change)="onWardChange()">
+              <option value="" disabled>Ward</option>
+              <option *ngFor="let ward of wards" [value]="ward">{{ward}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <label class="control-label col-sm-3" >Address:</label>
+    <div class="col-sm-10" style="margin-top: 10px; width: 600px;">          
+      <input type="text" class="form-control" formControlName="addressOrder" placeholder="Example: 01 Đường số 2-Phường Đông Ngạc-Quận Bắc Từ Liêm-TP. Hà Nội " name="addressOrder">
+      <div *ngIf="addFormOrder['controls']['addressOrder'].dirty && addFormOrder['controls']['addressOrder'].errors">
+        <small style="color: red;" *ngIf="addFormOrder['controls']['addressOrder'].errors['required']">The address is not allowed to leave</small>
+      </div>
+    </div>  
+  </div>
+</div>
+
+<div id="pro" class="control-label col-sm-4">
+  <div *ngIf="pro" class="product-card" style="padding-top: 30px;">
+    <h2 style="text-align: center">Product</h2>
+    <div class="info" style="display: flex; align-items: center;">
+      <div class="product-image" style="flex: 1; text-align: center;">
+        <img [src]="pro.imgProduct" alt="{{ pro.nameProduct }}" style="max-width: 100%; height: auto;" />
+      </div>
+      <div class="infoo" style="flex: 2; padding-left: 20px; padding-top: 70px;">
+        <h3>{{ pro.nameProduct }}</h3>
+        <p>Price: {{ pro.priceProduct | currency }}</p>
+        <p>Inventory: {{ pro.quantityProduct }}</p>
+        <label style="padding-top: 20px; font-weight: bold;" for="quantity">Total Quantity: </label>
+        <input type="number" id="quantity" formControlName="totalQuantity" min="1"[max]="pro.quantityProduct" (input)="validateQuantity($event)" (change)="calculateTotalPrice()"/>
+        <p>Total Price: {{ totalPrice | currency }}</p> 
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="form-bt">        
+  <div class="col-sm-offset-2 col-sm-9">
+    <button type="submit" class="btn btn-primary" [disabled]="addFormOrder.invalid">Save</button>
+    <a routerLink="/home" id="a-cancel" class="btn btn-sm btn-primary" style="margin-left: 20px;" >Cancel</a>
+  </div>
+</div>
+</form>
+</div>
